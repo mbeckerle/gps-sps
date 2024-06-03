@@ -147,11 +147,13 @@
     -->
     <xs:sequence dfdl:ref="gpssps:parityLayer">
       <xs:element name="TLM_preamble" type="gpssps:bits8"/>
-      <xs:annotation>
+      <xs:sequence>
+        <xs:annotation>
         <xs:appinfo source="http://www.ogf.org/dfdl/">
           <dfdl:assert test='{ TLM_preamble eq 0x8B }'/>
         </xs:appinfo>
       </xs:annotation>
+      </xs:sequence>
       <xs:element name="reservedForWord1" type="gpssps:bits16"/>
       <xs:element name="parityForWord1" type="gpssps:parity6" />
     </xs:sequence>
@@ -164,26 +166,32 @@
       <xs:element name="Momentum_Alert_Flag" type="gpssps:bits1"/>
       <xs:element name="SubFrameID" type="gpssps:bits3"
           dfdl:outputValueCalc="{ 1 }"/>
+      <xs:sequence>
       <xs:annotation>
         <xs:appinfo source="http://www.ogf.org/dfdl/">
           <dfdl:assert test='{ SubFrameID eq 1 }'/>
         </xs:appinfo>
       </xs:annotation>
+      </xs:sequence>
       <xs:element name="parityHOW" type="gpssps:bits2"
                   dfdl:outputValueCalc="{ $gpssps:parityHOW }"/>
-      <xs:annotation>
+    <xs:sequence>
+    <xs:annotation>
         <xs:appinfo source="http://www.ogf.org/dfdl/">
           <dfdl:assert test='{ parityHOW eq $gpssps:parityHOW }'/>
         </xs:appinfo>
       </xs:annotation>
+    </xs:sequence>
       <xs:element name="parityForWord2" type="gpssps:parityHOW" />
       <xs:element name="zeroParityBitsForWord2" type="gpssps:bits2"
                   dfdl:outputValueCalc="{ 0 }"/>
-      <xs:annotation>
+    <xs:sequence>
+    <xs:annotation>
         <xs:appinfo source="http://www.ogf.org/dfdl/">
           <dfdl:assert test='{ zeroParityBitsForWord2 eq 0 }'/>
         </xs:appinfo>
       </xs:annotation>
+    </xs:sequence>
     </xs:sequence>
   </xs:group>
 

@@ -8,12 +8,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   defaultRoundTrip="onePass">
 
-  <tdml:parserTestCase name="test_gpssps_01" root="Gpssps" model="com/owlcyberdefense/gpssps/gpssps/xsd/gpssps.dfdl.xsd">
+  <tdml:parserTestCase name="test_gpssps_01" root="Gpssps" model="com/owlcyberdefense/gpssps/xsd/gpssps.dfdl.xsd">
     <tdml:document>
-      <tdml:documentPart type="file">com/owlcyberdefense/gpssps/gpssps/data/test_01.gpssps</tdml:documentPart>
+      <tdml:documentPart type="file">com/owlcyberdefense/gpssps/data/test_01.gpssps</tdml:documentPart>
     </tdml:document>
     <tdml:infoset>
-      <tdml:dfdlInfoset type="file">com/owlcyberdefense/gpssps/gpssps/infosets/test_01.gpssps.xml</tdml:dfdlInfoset>
+      <tdml:dfdlInfoset type="file">com/owlcyberdefense/gpssps/infosets/test_01.gpssps.xml</tdml:dfdlInfoset>
     </tdml:infoset>
   </tdml:parserTestCase>
 
